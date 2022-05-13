@@ -17,7 +17,7 @@
             width: 100%;
             height: 100vh;
             background-position: 100px 200px;
-            background: no-repeat center;
+            background:center;
             background-size: cover;
             background-image: url("https://t1.daumcdn.net/cfile/tistory/998CF34C5F16438C23");
         }
@@ -42,19 +42,49 @@
         }
 
         #login {
-            transform: translateY(460px);
+            transform: translateY(-120px);
             text-align: center;
         }
 
         #sign {
-            transform: translateY(480px);
+            transform: translateY(-100px);
             text-align: center;
+        }
+        #port{
+            transform: translateY(1500px);
+            font-weight: bold;
+            text-align: center;
+            font-size: 25px;
+            color:aliceblue;
+        }   
+        #introduce{ 
+            text-align: center;
+            transform: translateY(2200px);
+            font-size: 25px;
+            color:aliceblue;
+        }
+        #introduce2{
+            transform: translateY(2900px);
         }
     </style>
 </head>
-
+<!-- 포트폴리오에 본인 프로젝트경험, 이력 등등을 채우는거지  -->
 <body>
     <div class="container">
+        <div id="port">
+            <p>목차</p>
+            <ul>
+                <dd>본인 이력</dd>
+                <dd>프로젝트경험</dd>
+            </ul>
+        </div>
+        <div id="introduce2">a</div>
+        <div id="introduce"><b>이력</b><br><p>이름:고지훈<br>나이:20<br>거주지:인천<br>경력연차:3(-3)년<br>취미:새로운거 배우기,음악감상</p>
+        <b>프로젝트경험</b><br>
+        <p>bootstrap에서 가져온 코드랑 내코드랑 합치는 과정이 어려워서 직접 css작성을 많이 하였고 <br> 간단한 버튼이나 input태크정도만 bootstrap을 사용할 수 있었다. 
+        <br> 이번 프로젝트를 하면서 bootstrap에서 코드가져오는 것부터 몰라서 해맷으나 <br> 스스로 공부를 하여 어느 정도는 bootstrap을 쓸 수 있었고 다음번에는 <br>
+    웹페이지 전체를 bootstrap으로 만들 수 있었으면 한다.</p></div>
+        
         <div id="login">
             <a href="./login.html">로그인</a>
         </div>
