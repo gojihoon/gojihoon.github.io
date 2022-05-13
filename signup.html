@@ -1,63 +1,197 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-    <!-- 회원가입,로그인 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function quest() {
+            var id1 = document.form1.id.value;
+            var fPass1 = document.form1.fPass.value;
+            var sPass1 = document.form1.sPass.value;
+            var names1 = document.form1.names.value;
+            var adress1 = document.form1.adress.value;
+            var fEmail1 = document.form1.fEmail.value;
+            var phone1 = document.form1.phone.value;
+            id2 = /[a-zA-Z0-9_-]{6,20}/gm;
+            fPass2 = /[a-zA-z0-9\W]{6,20}/gm;
+            names2 = /[ㄱ-ㅎ가-힣a-zA-Z]{3,}/gm;
+            adress2 = /[\w]{2,}/gm;
+            fEmail2 = /[a-zA-z0-9_.-]+@[a-zA-z0-9_-]+\.[a-zA-z0-9.]+/gm;
+            phone2 = /\d{2,3}[-\s.]?\d{3,4}[-\s.]?\d{4}/gm;
+            var blank = /\s/gm;
+            if (id2.test(id1) == false) {
+                alert("아이디를 다시 입력하세요.");
+                document.form1.id.focus();
+                document.form1.id.value = "";
+                return id1.replace(blank, '');
+            }
+            if (fPass2.test(fPass1) == false) {
+                alert("비밀번호를 다시 입력하세요.");
+                document.form1.fPass.focus();
+                document.form1.fPass.value = "";
+                return fPass1.replace(blank, '');
+            }
+            if (sPass1 != fPass1) {
+                alert("위의 비밀번호와 일치하지 않습니다.");
+                document.form1.sPass.focus();
+                document.form1.sPass.value = "";
+                return sPass2.replace(blank, '');
+            }
+            if (names2.test(names1) == false) {
+                alert("이름을 다시 입력하세요.");
+                document.form1.names.focus();
+                document.form1.names.value = "";
+                return names2.replace(blank, '');
+            }
+            if (adress2.test(adress1) == false) {
+                alert("주소를 다시 입력하세요.");
+                document.form1.adress.focus();
+                document.form1.adress.value = "";
+                return adress2.repalce(blank, '');
+            }
+            if (fEmail2.test(fEmail1) == false) {
+                alert("이메일 다시 입력하세요.");
+                document.form1.fEmail.focus();
+                document.form1.fEmail.value = "";
+                return fEmail2.replace(blank, '');
+            }
+            if (phone2.test(phone1) == false) {
+                alert("휴대폰 번호를 다시 입력하세요.");
+                document.form1.phone.focus();
+                document.form1.phone.value = "";
+                return phone.replace(blank, '');
+            }
+            confirm("회원가입 하시겠습니까?");
+        }
+    </script>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            background-position: 100px 200px;
+            background: no-repeat center;
+            background-size: cover;
+            background-image: url("https://t1.daumcdn.net/cfile/tistory/998CF34C5F16438C23");
+        }
+
+        * {
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: antiquewhite;
+            margin-top: 100px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        input {
+            margin-left: 100px;
+            width: 600px;
+            height: 45px;
+        }
+
+        p {
+            font-weight: bolder;
+            color: antiquewhite;
+            margin-left: 100px;
+            width: 200px;
+            height: 30px;
+            font-size: 20px;
+        }
+
+        #btn {
+            margin-top: 20px;
+            margin-left: 100px;
+            width: 150px;
+        }
+
+        #btn1 {
+            margin-top: 20px;
+            margin-left: 100px;
+            width: 500px;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
+
 <body>
-        <table border="1">
-            <tr>
-                <td>아이디:</td>
-                <td>
-                    <input type="text" id="id"> @ <input type="text" id="email">
-                </td>
-            </tr>
-            <tr>
-                <td>비밀번호:</td>
-                <td>
-                    <input type="password" id="pass1">
-                </td>
-            </tr>
-            <tr>
-                <td>비밀번호 확인:</td>
-                <td>
-                    <input type="password" id="pass2">
-                </td>
-            </tr>
-            <tr>
-                <td>이름:</td>
-                <td>
-                    <input type="text" id="name">
-                </td>
-            </tr>
-            <tr>
-                <td>생년월일:</td>
-                <td>
-                    <input type="date" id="date">
-                </td>
-            </tr>
-            <tr>
-                <td>성별:</td>
-                <td>
-                    <select name="gender" id="gender">
-                        <option value="성별">성별</option>
-                        <option value="남자">남자</option>
-                        <option value="여자">여자</option>
-                        <option value="선택안함">선택안함</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>휴대전화:</td>
-                <td>
-                    <input type="text" id="phone">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <button type="submit">가입하기</button>
-                </td>
-            </tr>
-        </table>
+    <div class="container">
+        <h1>회원가입</h1>
+        <form name="form1" action="" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <p>아이디(6~20 문자):</p>
+                    </td>
+                    <td><input type="text" name="id" class="form-control" placeholder="6-20자의 영문 대소문자, 숫자와 특수기호(_),(-)">
+                    <td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>비밀번호:</p>
+                    </td>
+                    <td><input type="password" name="fPass" class="form-control" placeholder="6-20자의 영문 대소문자 특수문자"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>비밀번호 확인:</p>
+                    </td>
+                    <td><input type="password" name="sPass" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>이름:</p>
+                    </td>
+                    <td><input type="text" name="names" class="form-control"
+                            placeholder="한글과 영문 대소문자를 사용하세요.(특수기호,공백 사용 불가)-최소 3글자 이상"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>주소:</p>
+                    </td>
+                    <td><input type="text" name="adress" class="form-control" placeholder="2글자 이상"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>생일:</p>
+                    </td>
+                    <td><input type="date" name="birthday" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>이메일:</p>
+                    </td>
+                    <td><input type="text" name="fEmail" class="form-control"
+                            placeholder="영문 대소문자,숫자와 특수기호(-, _ ,.)+@포함"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>휴대폰:</p>
+                    </td>
+                    <td><input type="text" name="phone" class="form-control" placeholder="특수기호(-,공백,.)사용 가능"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="확인" onclick="quest()" class="btn btn-success" id="btn"></td>
+                    <td><input type="reset" value="다시입력" class="btn btn-secondary" id="btn1"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
+
 </html>
